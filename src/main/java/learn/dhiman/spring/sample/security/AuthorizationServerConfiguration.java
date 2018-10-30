@@ -33,7 +33,7 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
         clients.inMemory()
             .withClient("web_app")
-            .secret("$2a$10$jrcO.1pT2g/5pMFzvOQG/emmaEVtQ9YT9ssog54EOrljo20i2RbRu")
+            .secret("$2a$10$NYL/AhY96boGYjUUGZr67e.oPQ0UXB04W2nBy00V5XVeKP0G.foGW")
             .scopes("FOO")
             .autoApprove(true)
             //.authorities("FOO_READ", "FOO_WRITE")
@@ -61,9 +61,9 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
 
     @Bean
     protected JwtAccessTokenConverter jwtTokenEnhancer() {
-        KeyStoreKeyFactory keyStoreKeyFactory = new KeyStoreKeyFactory(new ClassPathResource("chalodevjwt.jks"), "mySecretKey".toCharArray());
+        KeyStoreKeyFactory keyStoreKeyFactory = new KeyStoreKeyFactory(new ClassPathResource("demodevjwt.jks"), "notASecret".toCharArray());
         JwtAccessTokenConverter converter = new JwtAccessTokenConverter();
-        converter.setKeyPair(keyStoreKeyFactory.getKeyPair("chalodevjwt"));
+        converter.setKeyPair(keyStoreKeyFactory.getKeyPair("demodevjwt"));
         return converter;
     }
 
