@@ -21,6 +21,7 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
         http
             .csrf().disable()
             .authorizeRequests()
+            .antMatchers("/api/data/public").permitAll()
             .antMatchers("/**").authenticated();
     }
 

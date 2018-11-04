@@ -33,7 +33,7 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
         clients.inMemory()
             .withClient("web_app")
-            .secret("$2a$10$NYL/AhY96boGYjUUGZr67e.oPQ0UXB04W2nBy00V5XVeKP0G.foGW")
+            .secret("$2a$10$/DA0ezUDf/R869SekwZKxel1/QEPO5aCeeRnNi10xJRiTqcycOd1i")
             .scopes("FOO")
             .autoApprove(true)
             //.authorities("FOO_READ", "FOO_WRITE")
