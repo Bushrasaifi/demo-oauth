@@ -26,7 +26,7 @@ public class Oauth2UserDetailsService implements UserDetailsService {
 
             @Override
             public String getPassword() {
-                String encodePassword = passwordEncoder == null ? "reader" : passwordEncoder.encode("reader");
+                var encodePassword = passwordEncoder == null ? "reader" : passwordEncoder.encode("reader");
                 logger.info("Encoded password is : {}", encodePassword);
                 return encodePassword;
             }

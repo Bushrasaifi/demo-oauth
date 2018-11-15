@@ -40,7 +40,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Bean
     @Override
     public UserDetailsService userDetailsServiceBean() throws Exception {
-        Oauth2UserDetailsService oauth2UserDetailsService = new Oauth2UserDetailsService();
+        var oauth2UserDetailsService = new Oauth2UserDetailsService();
         oauth2UserDetailsService.setPasswordEncoder(passwordEncoder());
         return oauth2UserDetailsService;
     }

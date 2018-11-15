@@ -61,8 +61,8 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
 
     @Bean
     protected JwtAccessTokenConverter jwtTokenEnhancer() {
-        KeyStoreKeyFactory keyStoreKeyFactory = new KeyStoreKeyFactory(new ClassPathResource("demodevjwt.jks"), "notASecret".toCharArray());
-        JwtAccessTokenConverter converter = new JwtAccessTokenConverter();
+        var keyStoreKeyFactory = new KeyStoreKeyFactory(new ClassPathResource("demodevjwt.jks"), "notASecret".toCharArray());
+        var converter = new JwtAccessTokenConverter();
         converter.setKeyPair(keyStoreKeyFactory.getKeyPair("demodevjwt"));
         return converter;
     }
